@@ -1,0 +1,111 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://assets/sprites/terrain/wall.png" type="Texture" id=1]
+[ext_resource path="res://assets/sprites/terrain/roof.png" type="Texture" id=2]
+[ext_resource path="res://assets/sprites/terrain/roofcornerl.png" type="Texture" id=3]
+[ext_resource path="res://assets/sprites/terrain/roofcornerr.png" type="Texture" id=4]
+[ext_resource path="res://assets/sprites/terrain/tile.png" type="Texture" id=5]
+
+[node name="Node2D" type="Node2D" index="0"]
+
+[node name="wall" type="Sprite" parent="." index="0"]
+
+position = Vector2( 32, 32 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 0, 0, 64, 64 )
+_sections_unfolded = [ "Region" ]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="wall" index="0"]
+
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="wall/StaticBody2D" index="0"]
+
+build_mode = 0
+polygon = PoolVector2Array( -32, -32, 32, -32, 32, 32, -32, 32, -32, -32 )
+
+[node name="roof" type="Sprite" parent="." index="1"]
+
+position = Vector2( 136, 32 )
+texture = ExtResource( 2 )
+region_enabled = true
+region_rect = Rect2( 0, 0, 64, 64 )
+_sections_unfolded = [ "Region" ]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="roof" index="0"]
+
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="roof/StaticBody2D" index="0"]
+
+build_mode = 0
+polygon = PoolVector2Array( -32, -32, 32, -32, 32, 32, -32, 32, -32, -32 )
+
+[node name="roofcornerl" type="Sprite" parent="." index="2"]
+
+position = Vector2( 240, 32 )
+texture = ExtResource( 3 )
+region_enabled = true
+region_rect = Rect2( 0, 0, 64, 64 )
+_sections_unfolded = [ "Region" ]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="roofcornerl" index="0"]
+
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="roofcornerl/StaticBody2D" index="0"]
+
+build_mode = 0
+polygon = PoolVector2Array( -32, -32, 32, -32, -32, 32 )
+
+[node name="roofcornerr" type="Sprite" parent="." index="3"]
+
+position = Vector2( 344, 32 )
+texture = ExtResource( 4 )
+region_enabled = true
+region_rect = Rect2( 0, 0, 64, 64 )
+_sections_unfolded = [ "Region" ]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="roofcornerr" index="0"]
+
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="roofcornerr/StaticBody2D" index="0"]
+
+build_mode = 0
+polygon = PoolVector2Array( -32, -32, 32, -32, 32, 32, -32, -32 )
+
+[node name="tile" type="Sprite" parent="." index="4"]
+
+position = Vector2( 448, 32 )
+texture = ExtResource( 5 )
+region_enabled = true
+region_rect = Rect2( 0, 0, 64, 64 )
+_sections_unfolded = [ "Region" ]
+
+
